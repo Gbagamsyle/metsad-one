@@ -155,61 +155,82 @@ app.post('/api/send-contact', async (req, res) => {
 
     // Send confirmation to visitor
     const visitorHtml = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </head>
-        <body style="margin:0; padding:0; font-family: Arial, sans-serif; background-color: #f9f9f9;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f9f9f9;">
+     <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Message Was Received</title>
+  </head>
+
+  <body style="margin:0; padding:0; background-color:#f5f5f5; font-family:Arial, sans-serif;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5; padding:30px 10px;">
+      <tr>
+        <td align="center">
+          
+          <!-- CARD -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; background:#ffffff; border-radius:8px; overflow:hidden;">
+            
+            <!-- HEADER BAR -->
             <tr>
-              <td align="center" style="padding: 20px 10px;">
-                <table width="100%" style="max-width: 580px; background-color: #ffffff; border-radius: 4px;" cellpadding="0" cellspacing="0" border="0">
-                  <tr>
-                    <td style="padding: 24px 24px 0 24px; border-bottom: 2px solid #D4A024;">
-                      <h1 style="margin: 0 0 8px 0; color: #0A1F44; font-size: 24px; font-weight: bold;">Thank you, ${escapeHtml(name)}!</h1>
-                    </td>
-                  </tr>
-                  
-                  <tr>
-                    <td style="padding: 24px; color: #333; font-size: 13px; line-height: 1.6;">
-                      <p style="margin: 0 0 16px 0;">
-                        We've received your message and will get back to you shortly.
-                      </p>
-                    </td>
-                  </tr>
-                  
-                  <tr>
-                    <td style="padding: 0 24px;">
-                      <p style="margin: 8px 0; color: #0A1F44; font-weight: bold; font-size: 13px;">
-                        Your message:
-                      </p>
-                    </td>
-                  </tr>
-                  
-                  <tr>
-                    <td style="padding: 0 24px 24px 24px;">
-                      <p style="margin: 0; background-color: #F5E5C5; padding: 14px; border-left: 3px solid #D4A024; color: #333; font-size: 13px; line-height: 1.5; white-space: pre-wrap; word-break: break-word;">
-                        ${escapeHtml(message)}
-                      </p>
-                    </td>
-                  </tr>
-                  
-                  <tr>
-                    <td style="padding: 24px; border-top: 1px solid #e5e5e5; color: #666; font-size: 12px; line-height: 1.6;">
-                      Best regards,<br />
-                      <strong style="color: #0A1F44;">Metsad</strong><br />
-                      <a href="mailto:${escapeHtml(adminEmail)}" style="color: #D4A024; text-decoration: none;">${escapeHtml(adminEmail)}</a>
-                    </td>
-                  </tr>
-                </table>
+              <td style="background:#0A1F44; padding:20px;">
+                <h1 style="margin:0; font-size:22px; color:#ffffff; font-weight:600;">
+                  Thank You, ${escapeHtml(name)}!
+                </h1>
               </td>
             </tr>
+
+            <!-- BODY CONTENT -->
+            <tr>
+              <td style="padding:24px; font-size:14px; color:#444; line-height:1.7;">
+                <p style="margin-top:0;">
+                  We’ve received your message on <strong>metsadgroup.com</strong>.
+                </p>
+
+                <p style="margin-bottom:20px;">
+                  Our team will get back to you shortly. Below is a copy of the message you sent:
+                </p>
+
+                <!-- MESSAGE BOX -->
+                <div style="
+                  background:#FFF8E8;
+                  border-left:4px solid #D4A024;
+                  padding:14px 16px;
+                  font-size:13px;
+                  color:#333;
+                  line-height:1.6;
+                  white-space:pre-wrap;
+                  border-radius:4px;
+                ">
+                  ${escapeHtml(message)}
+                </div>
+              </td>
+            </tr>
+
+            <!-- FOOTER -->
+            <tr>
+              <td style="padding:20px 24px; background:#fafafa; border-top:1px solid #eee; font-size:12px; color:#666; line-height:1.6;">
+                Best regards,<br />
+                <strong style="color:#0A1F44;">Metsad Team</strong><br />
+                <a 
+                  href="mailto:${escapeHtml(adminEmail)}"
+                  style="color:#D4A024; text-decoration:none;"
+                >
+                  ${escapeHtml(adminEmail)}
+                </a>
+              </td>
+            </tr>
+
           </table>
-        </body>
-      </html>
-    `
+          <!-- END CARD -->
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+`
+
     const visitorText = `Thank you ${escapeHtml(name)}\n\nWe've received your message and will get back to you shortly.\n\nYour message:\n${escapeHtml(message)}`
 
     const visitorRes = await resend.emails.send({
