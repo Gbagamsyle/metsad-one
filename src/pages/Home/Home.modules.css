@@ -1,0 +1,133 @@
+/* Hero styles */
+.hero{
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  overflow: hidden;
+  width: 100%;
+  /* reduce left inset slightly while keeping responsive right padding */
+  padding: clamp(18px, 3vw, 48px) clamp(12px, 2.5vw, 40px) clamp(18px, 3vw, 48px) clamp(8px, 1.5vw, 28px);
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+}
+
+.hero-slider { 
+  display: none;
+}
+.slide{ 
+  display: none;
+}
+.slide.active{ 
+  display: none;
+}
+
+.hero::before{ 
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background: linear-gradient(180deg, rgba(7,16,34,0.55) 10%, rgba(7,16,34,0.65) 60%);
+  z-index: 2;
+}
+.hero-content{ 
+  position: relative; 
+  z-index: 3; 
+  text-align: left; 
+  max-width: clamp(300px, 90vw, 700px); 
+  width: 100%;
+  /* nudge left inside the hero container a little */
+  margin-left: clamp(0px, -1vw, 0px);
+  /* push content down slightly in a responsive way */
+  margin-top: clamp(18px, 6vh, 72px);
+}
+.hero-content .eyebrow{ 
+  color: #dbeef7; 
+  font-weight: 600; 
+  letter-spacing: 1px; 
+  margin-bottom: 10px;
+}
+.hero-content h1{ 
+  font-size: clamp(2rem, 8vw, 4rem); 
+  margin: 0 0 8px; 
+  letter-spacing: 1px;
+}
+.hero-content .subtitle{ 
+  font-size: clamp(1rem, 2vw, 1.3rem); 
+  margin: 0 0 18px; 
+  color: #e6eef6; 
+  font-weight: 500;
+}
+.feature-list{ 
+  list-style: none; 
+  margin: 0 0 20px; 
+  padding: 0; 
+  color: #dbeef7;
+}
+.feature-list li{ 
+  margin: 6px 0;
+}
+.hero-cta{ 
+  display: flex; 
+  gap: 12px; 
+  justify-content: flex-start;
+}
+.btn{ 
+  display: inline-block; 
+  padding: 12px 20px; 
+  text-decoration: none; 
+  border-radius: 50px; 
+  font-weight: 600;
+}
+.btn.primary{ 
+  background: #1a3564; 
+  color: #ffffff;
+}
+.btn.ghost{ 
+  background: transparent; 
+  border: 1px solid rgba(255,255,255,0.18); 
+  color: #fff;
+}
+
+@media (max-width: 768px){
+  .hero{ 
+    min-height: 400px; 
+    justify-content: center; 
+    padding: 40px 20px;
+  }
+  .hero-content{ 
+    text-align: center;
+    width: 100%;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    padding: 50px 30px;
+  }
+}
+
+/* Mobile: increase button border-radius for a more modern pill look */
+@media (max-width: 600px) {
+  .hero-cta .btn {
+    border-radius: 18px;
+    padding: 10px 22px;
+  }
+}

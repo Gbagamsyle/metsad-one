@@ -1,0 +1,16 @@
+.certs-section{padding:64px 20px; background:#fff}
+.certs-inner{max-width:1200px; margin:0 auto; text-align:center}
+.certs-inner h2{font-size:36px; color:#0f2b48; margin-bottom:8px}
+.certs-sub{color:#556779; margin-bottom:40px}
+
+.certs-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:24px; align-items:center; justify-items:center}
+
+.cert-item{width:120px; height:80px; display:flex; align-items:center; justify-content:center}
+.cert-item img{max-width:100%; max-height:100%; filter:grayscale(100%) opacity(0.6); transition:filter .25s ease, opacity .25s ease, transform .25s ease}
+.cert-item:hover img{filter:none; opacity:1; transform:translateY(-4px)}
+
+@media (max-width:600px){
+  .certs-grid{grid-template-columns:repeat(3, 1fr); gap:16px}
+  .cert-item{width:100px; height:70px}
+  .certs-inner h2{font-size:24px}
+}
