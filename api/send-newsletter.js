@@ -1,3 +1,4 @@
+/* eslint-env node */
 import { Resend } from 'resend'
 
 function escapeHtml(text) {

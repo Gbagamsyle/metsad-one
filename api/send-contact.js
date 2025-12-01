@@ -1,3 +1,4 @@
+/* eslint-env node */
 import { Resend } from 'resend'
 
 // Small server-side HTML escape
