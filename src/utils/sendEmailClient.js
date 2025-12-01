@@ -1,7 +1,7 @@
 // Client-side email utility
 // Calls backend API endpoints to send emails via Resend
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+const API_URL = import.meta.env.VITE_API_URL || 'https://metsad.onrender.com'
 
 /**
  * Send a contact form submission via backend API
