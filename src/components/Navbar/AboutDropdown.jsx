@@ -50,19 +50,34 @@ export default function AboutDropdown() {
     }
   }
 
+  // detect touch devices (no hover) safely
+  const isTouchDevice = () => typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(hover: none)').matches
+
   return (
     <div
       className="about-dropdown-wrapper"
       onMouseEnter={() => {
-        cancelScheduledClose()
-        setIsOpen(true)
+        if (!isTouchDevice()) {
+          cancelScheduledClose()
+          setIsOpen(true)
+        }
       }}
-      onMouseLeave={() => scheduleClose()}
+      onMouseLeave={() => {
+        if (!isTouchDevice()) scheduleClose()
+      }}
       onFocus={() => {
-        cancelScheduledClose()
-        setIsOpen(true)
+        if (!isTouchDevice()) {
+          cancelScheduledClose()
+          setIsOpen(true)
+        }
       }}
-      onBlur={() => scheduleClose()}
+      onBlur={() => {
+        if (!isTouchDevice()) scheduleClose()
+      }}
+      onTouchStart={() => {
+        // ensure any scheduled close is cancelled on touch so taps open the menu reliably
+        cancelScheduledClose()
+      }}
     >
       <button
         className={`about-dropdown-trigger ${isOpen ? 'active' : ''}`}
