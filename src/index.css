@@ -54,6 +54,11 @@ body {
   width: 100%;
 }
 
+/* Ensure a white page background to avoid dark/black flashes while scrolling between sections */
+#root, body {
+  background-color: #ffffff;
+}
+
 .app-root {
   display: flex;
   flex-direction: column;
@@ -100,10 +105,11 @@ button:focus-visible {
 
 /* Scroll reveal utilities */
 .reveal {
-  opacity: 0;
-  transform: translateY(18px) scale(0.995);
+  /* keep content slightly perceptible while still allowing a small entrance offset */
+  opacity: 0.02;
+  transform: translateY(10px) scale(0.998);
   will-change: transform, opacity;
-  transition: opacity 680ms cubic-bezier(.2,.9,.3,1), transform 680ms cubic-bezier(.2,.9,.3,1);
+  transition: opacity 420ms cubic-bezier(.2,.9,.3,1), transform 420ms cubic-bezier(.2,.9,.3,1);
 }
 .reveal--visible {
   opacity: 1;
@@ -112,9 +118,9 @@ button:focus-visible {
 
 /* Add a subtle stagger using child selector when container has multiple direct children */
 .reveal[data-stagger] > * {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 620ms ease, transform 620ms ease;
+  opacity: 0.02;
+  transform: translateY(8px);
+  transition: opacity 360ms ease, transform 360ms ease;
 }
 .reveal[data-stagger].reveal--visible > * {
   opacity: 1;
