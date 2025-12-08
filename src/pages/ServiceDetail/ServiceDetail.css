@@ -177,7 +177,7 @@
 .feature-card-detailed:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 32px rgba(10, 31, 68, 0.12);
-  border-color: #D4A024;
+  border-color: #0A1F44;
 }
 
 .feature-card-detailed h3 {
