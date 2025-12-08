@@ -1,0 +1,366 @@
+/* Service Detail Main */
+.service-detail-main {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.service-detail-hero {
+  background: linear-gradient(135deg, #0A1F44 0%, #1a3a5c 100%);
+  color: white;
+  padding: 60px 60px;
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.breadcrumb {
+  color: #D4A024;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.breadcrumb:hover {
+  gap: 12px;
+}
+
+.service-detail-hero h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #D4A024;
+  font-weight: 600;
+}
+
+.hero-image {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .service-detail-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 32px;
+  }
+
+  .service-detail-hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail-hero {
+    padding: 60px 20px;
+    margin-top: 16px;
+  }
+
+  .service-detail-hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+}
+
+/* Overview Section */
+.service-overview {
+  padding: 80px 20px;
+  background: white;
+}
+
+.overview-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.service-overview h2 {
+  font-size: 40px;
+  color: #0A1F44;
+  margin-bottom: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.overview-text {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .service-overview {
+    padding: 60px 20px;
+  }
+
+  .service-overview h2 {
+    font-size: 32px;
+  }
+
+  .overview-text {
+    font-size: 16px;
+  }
+}
+
+/* Detailed Features Section */
+.service-features-detailed {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.service-features-detailed h2 {
+  font-size: 40px;
+  color: #0A1F44;
+  text-align: center;
+  margin-bottom: 48px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.feature-card-detailed {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(10, 31, 68, 0.08);
+  border: 1px solid rgba(212, 160, 36, 0.1);
+  transition: all 0.35s ease;
+}
+
+.feature-card-detailed:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(10, 31, 68, 0.12);
+  border-color: #D4A024;
+}
+
+.feature-card-detailed h3 {
+  font-size: 20px;
+  color: #0A1F44;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.feature-card-detailed p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .service-features-detailed {
+    padding: 60px 20px;
+  }
+
+  .service-features-detailed h2 {
+    font-size: 32px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Benefits Section */
+.service-benefits {
+  padding: 80px 20px;
+  background: white;
+}
+
+.service-benefits h2 {
+  font-size: 40px;
+  color: #0A1F44;
+  text-align: center;
+  margin-bottom: 48px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.benefits-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  background: #eff3f8;
+  transform: translateX(8px);
+}
+
+.benefit-icon {
+  color: #D4A024;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.benefit-item span {
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .service-benefits {
+    padding: 60px 20px;
+  }
+
+  .service-benefits h2 {
+    font-size: 32px;
+  }
+
+  .benefits-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* CTA Section */
+.service-cta {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0A1F44 0%, #1a3a5c 100%);
+  color: white;
+  text-align: center;
+}
+
+.service-cta h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.service-cta p {
+  font-size: 18px;
+  margin-bottom: 32px;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #D4A024;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.35s ease;
+  font-size: 16px;
+}
+
+.cta-button:hover {
+  background: #f1aa00;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(212, 160, 36, 0.4);
+}
+
+@media (max-width: 768px) {
+  .service-cta {
+    padding: 60px 20px;
+  }
+
+  .service-cta h2 {
+    font-size: 32px;
+  }
+
+  .service-cta p {
+    font-size: 16px;
+  }
+}
+
+/* Not Found Section */
+.service-not-found {
+  padding: 120px 20px;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-not-found h1 {
+  font-size: 48px;
+  color: #0A1F44;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.service-not-found p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #D4A024;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  gap: 12px;
+}

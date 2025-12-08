@@ -2,6 +2,8 @@
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.modules.css'
 import logo from '../../assets/images/logo.png'
+import ServiceDropdown from './ServiceDropdown'
+import AboutDropdown from './AboutDropdown'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -55,8 +57,8 @@ export default function Navbar() {
 
         <nav className={open ? 'nav-links open' : 'nav-links'}>
           <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/services">Services</Link>
+          <AboutDropdown />
+          <ServiceDropdown />
           <Link to="/contact">Contact</Link>
         </nav>
       </div>

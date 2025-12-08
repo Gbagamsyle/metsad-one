@@ -1,0 +1,55 @@
+.about-dropdown-wrapper{ position:relative; display:inline-block }
+.about-dropdown-trigger{ background:transparent; border:0; cursor:pointer; display:inline-flex; align-items:center; gap:8px }
+.about-dropdown-trigger .dropdown-icon{ margin-left:6px }
+.about-dropdown-trigger{
+	color: inherit;
+	font-weight: 500;
+	padding: 8px 6px;
+}
+.about-dropdown-trigger .dropdown-icon{ color: inherit; opacity: 0.9 }
+.about-dropdown-menu{ position:absolute; top:100%; margin-top:6px; right:0; left:auto; min-width:260px; background:#fff; box-shadow:0 18px 40px rgba(7,16,34,0.12); border-radius:0; border:1px solid rgba(10,31,68,0.06); z-index:40 }
+.about-dropdown-menu .dropdown-content{ display:flex; flex-direction:column }
+.about-dropdown-menu .dropdown-item{ padding:12px 16px; display:flex; justify-content:space-between; gap:12px; align-items:center; color:#0A1F44; text-decoration:none; border-bottom:1px solid rgba(10,31,68,0.04); font-weight:600 }
+.about-dropdown-menu .dropdown-item:last-child{ border-bottom:0 }
+.about-dropdown-menu .dropdown-item:hover{ background: #f3f8fd }
+.about-dropdown-menu .item-title{ font-size:14px }
+.about-dropdown-menu .item-arrow{ opacity:0.7 }
+
+/* remove rounded focus artifacts */
+.about-dropdown-trigger:focus{ outline:none }
+.about-dropdown-menu, .about-dropdown-menu *{ border-radius:0 !important }
+
+/* Mobile behavior: keep the dropdown accessible inside the mobile nav or full-width fixed panel */
+@media (max-width: 768px) {
+	.about-dropdown-wrapper { width: 100%; display: block }
+
+	.about-dropdown-trigger {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: 16px 20px;
+		color: #e6f0f6;
+		background: transparent;
+		border: 0;
+		text-align: left;
+	}
+
+	.about-dropdown-menu {
+		position: fixed;
+		top: auto;
+		left: 0;
+		right: 0;
+		bottom: auto;
+		margin-top: 0;
+		min-width: auto;
+		max-height: 60vh;
+		overflow-y: auto;
+		border-radius: 0 !important;
+		box-shadow: none;
+		border: 0;
+		z-index: 1000;
+	}
+
+	.about-dropdown-menu .dropdown-item { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+}

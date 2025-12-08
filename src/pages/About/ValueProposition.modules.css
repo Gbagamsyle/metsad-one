@@ -1,0 +1,77 @@
+.vp-page {
+  /* account for fixed navbar; keep compact bottom spacing */
+  padding: calc(84px + 20px) 20px 36px;
+  background: linear-gradient(180deg,#f7fbff 0%, #f3f8fd 100%);
+}
+
+.vp-container{
+  max-width: 1160px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 44px 48px;
+  border-radius: 14px;
+  box-shadow: 0 22px 48px rgba(7,16,34,0.06);
+  border: 1px solid rgba(10,31,68,0.04);
+}
+
+.vp-hero{ margin-bottom: 24px }
+.vp-hero h1{ margin:0; font-size:40px; color:#07102a; letter-spacing:-0.6px; line-height:1.05 }
+.vp-hero .vp-sub{ margin-top:12px; color:#334e6f; font-size:17px; max-width:880px }
+
+/* decorative underline used under the hero title (and mirrored under section headings) */
+.underline{
+  width: 84px;
+  height: 4px;
+  margin: 14px 0 8px 0;
+  border-radius: 6px;
+  background: #07102a;
+  box-shadow: 0 8px 20px rgba(11,86,255,0.12);
+  display: block;
+}
+
+/* Mirror the underline for the philosophy heading using a pseudo-element so no extra markup is required */
+.vp-philosophy-section h2, .vp-philosophy-section .vp-section-title{ position:relative; padding-bottom:18px; margin:0 0 12px; font-size:30px; font-weight:700; color:#07102a }
+.vp-philosophy-section h2::after, .vp-philosophy-section .vp-section-title::after{
+  content: '';
+  display:block;
+  width: 92px;
+  height:4px;
+  border-radius:8px;
+  background: #07102a;
+  box-shadow: 0 10px 22px rgba(11,86,255,0.12);
+  margin-top:12px;
+}
+
+.vp-grid{ display:grid; grid-template-columns: 1fr 360px; gap:36px; align-items:start }
+.vp-list{ list-style:none; padding:0; margin:0 }
+.vp-list li{ position:relative; padding-left:42px; margin:18px 0; color:#2e4054; line-height:1.75; font-size:17px }
+.vp-list li::before{ content:'\2713'; position:absolute; left:0; top:0; width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:#eaf3ff; color:#1e6fff; border-radius:6px; font-weight:700; box-shadow:0 8px 22px rgba(46,111,191,0.08); font-size:14px }
+
+.vp-side { background: linear-gradient(180deg,#ffffff 0%,#fbfdff 100%); padding:20px; border-radius:10px; border:1px solid rgba(10,31,68,0.04); box-shadow: 0 6px 18px rgba(7,16,34,0.04) }
+.vp-side h3{ margin:0 0 12px; font-size:18px; color:#07102a }
+.vp-side p{ margin:0 0 10px; color:#334e6f; line-height:1.7 }
+
+.vp-philosophy h4{ margin:14px 0 8px; font-size:15px; color:#0A1F44 }
+.vp-philosophy p{ margin:6px 0; color:#2e4054 }
+
+/* sticky aside on large screens to keep the philosophy visible */
+@media (min-width: 1000px) {
+  .vp-side { position: sticky; top: calc(84px + 18px); }
+}
+
+/* CTA inside side */
+.vp-cta{ display:inline-block; margin-top:18px; background:#0A1F44; color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700 }
+.vp-cta:hover{ background:#153053 }
+
+/* Responsive */
+@media (max-width: 980px){
+  .vp-grid{ grid-template-columns: 1fr; }
+  .vp-container{ padding:28px }
+  .vp-hero h1{ font-size:32px }
+  .vp-list li{ padding-left:30px }
+}
+
+/* full-width philosophy section below the list */
+.vp-philosophy-section{ margin-top:30px; padding:22px 24px; background:#fff; border-radius:10px; border:1px solid rgba(10,31,68,0.04); box-shadow:0 10px 28px rgba(7,16,34,0.04) }
+.vp-philosophy-section h3{ margin:0 0 12px; font-size:20px; color:#07102a }
+

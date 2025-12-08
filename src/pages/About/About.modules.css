@@ -223,3 +223,29 @@
   .achievements-grid{ grid-template-columns: 1fr; gap:20px }
   .achievement-card{ padding-left:36px }
 }
+
+/* Value proposition and policies */
+.value-prop-section{ padding: 64px 20px; background: #fff }
+.value-prop-container{ max-width:1200px; margin:0 auto }
+.value-prop-header{ text-align:left; margin-bottom:18px }
+.value-prop-header h2{ font-size:36px; margin:0 0 8px; color:#07102a }
+.value-prop-content{ display:flex; gap:40px; align-items:flex-start }
+.value-prop-list{ list-style:none; padding:0; margin:0; color:#304156; flex:1 }
+.value-prop-list li{ margin:10px 0; line-height:1.8 }
+.philosophy{ flex:1 }
+.philosophy h3{ margin-top:0 }
+
+.policy-section{ background: linear-gradient(180deg,#f7fbff 0%, #f3f8fd 100%); padding:44px 20px }
+.policy-container{ max-width:1000px; margin:0 auto }
+.policy-container h2{ font-size:28px; margin:0 0 8px; color:#07102a }
+.policy-container p{ color:#334e6f; line-height:1.8 }
+.download-btn{ display:inline-flex; gap:10px; align-items:center; margin-top:16px; background:#ff7b6b; color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700 }
+.download-btn img{ width:18px; height:18px }
+
+@media (max-width: 900px){
+  .value-prop-content{ flex-direction:column }
+  .value-prop-header{text-align:center}
+  .value-prop-list, .philosophy{ width:100% }
+  .policy-container h2{ text-align:center }
+  .download-btn{ margin-left:auto; margin-right:auto }
+}
