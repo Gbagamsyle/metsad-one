@@ -23,13 +23,16 @@ export default function About() {
                 <h2>Our History</h2>
                 <div className="underline"></div>
                 <p>
-                  Founded in 2004, Metsad Oil & Gas began with a simple vision: to provide reliable, innovative energy solutions while maintaining the highest standards of safety and environmental responsibility.
+                  Metsad Engineering Services Limited (MESL) is an indigenous engineering, construction, and procurement company. MESL is a premier, multi-disciplinary engineering and infrastructure conglomerate dedicated to shaping resilient communities and advancing a sustainable future. With a foundation built on technical expertise, unwavering integrity, and a client-centric approach, we deliver integrated solutions across three core pillars: engineering services, Comprehensive Construction, and Global Procurement.
                 </p>
                 <p>
-                  Over the past two decades, we've grown from a regional operator to a global energy leader, with operations spanning multiple continents and a workforce of over 5,000 dedicated professionals.
+                  With a collective experience spanning over 98 years, our team embodies a legacy of knowledge dedicated to advancing Africa's energy infrastructure, MESL provide quality services delivered by a team of qualified, certified, and experienced professionals.
+We have our offices located in Lagos State, and Abuja FCT. MESL team is a unique resource in the industry, providing high quality, independent analytical and operational skills to a wide variety of companies and organizations in a range of different ways.
                 </p>
                 <p>
-                  Our commitment to technological advancement and sustainable practices has positioned us as an industry innovator, consistently delivering superior results while protecting the environment for future generations.
+                  We are rapidly growing our capability having acquired appropriate assets to position ourselves appropriately. Our operational objective is to render Quality Services at very competitive terms. We are an equal opportunity employer, and we place priority on the technical competency of our personnel, whilst recognizing the need to be always community friendly.
+At Metsad, safety is not a policy; it is our core value and the first step in every procedure. We operate with an uncompromising "Zero-Harm" philosophy. Our integrated Health, Safety, Security, and Environment (HSSE) management system is designed to proactively identify and mitigate risks. Every member of the Metsad team is empowered and obligated to stop any unsafe act or condition. Our outstanding safety record is a testament to a culture where every employee returns home safely, every day.
+
                 </p>
               </div>
               <div className="history-image">
@@ -79,6 +82,8 @@ export default function About() {
             </div>
           </div>
         </section>
+
+        {/* Removed inlined value & policy sections — now each policy has its own page */}
 
 
 

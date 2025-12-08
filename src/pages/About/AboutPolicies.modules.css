@@ -1,0 +1,38 @@
+.policy-page{
+  /* account for fixed navbar (84px) + small top spacing */
+  padding: calc(84px + 24px) 20px 32px;
+  background: #f8fafc;
+  min-height: auto;
+}
+
+.policy-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 44px 48px;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(7,16,34,0.06);
+  border: 1px solid rgba(10,31,68,0.04);
+}
+
+.policy-container h1{ font-size:32px; margin:0 0 12px; color:#07102a; font-weight:800 }
+.policy-container .underline{ margin-bottom:18px; width:72px; height:4px; background:linear-gradient(90deg,#0A1F44,#5FA3E0); border-radius:2px }
+.policy-lead{ color:#2e4054; font-size:16px; line-height:1.9; margin-bottom:18px }
+.policy-container p{ color:#334e6f; line-height:1.8; margin:0 0 12px }
+.policy-container ul{ margin:12px 0 0 18px; color:#334e6f }
+.policy-container ul li{ margin:10px 0 }
+
+.download-btn{ display:inline-flex; gap:10px; align-items:center; margin-top:18px; background:#ff7b6b; color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700; box-shadow:0 8px 20px rgba(231,95,84,0.12) }
+.download-btn img{ width:18px; height:18pxs }
+.download-btn:focus{ outline: 3px solid rgba(15,63,120,0.12); outline-offset: 3px }
+
+/* smaller screens: reduce padding and drop the box-shadow for a simpler layout */
+@media (max-width: 900px){
+	.policy-page{ padding: 80px 16px 60px }
+	.policy-container{ padding:24px }
+  .policy-container h1{ text-align:center }
+  /* center the decorative underline on small screens */
+  .policy-container .underline{ margin-left:auto; margin-right:auto }
+	.download-btn{ margin-left:auto; margin-right:auto }
+}
+

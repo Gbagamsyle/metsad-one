@@ -70,7 +70,17 @@
   align-items: center;
 }
 
-.nav-links a {
+/* Nudge Home (first link) and Contact (last link) slightly to the right for breathing room */
+.nav-links > a:first-child {
+  padding-left: 22px;
+}
+.nav-links > a:last-child {
+  padding-right: 24px;
+}
+
+.nav-links a,
+.service-dropdown-wrapper,
+.about-dropdown-wrapper {
   color: #e6f0f6;
   text-decoration: none;
   padding: 8px 6px;
@@ -80,8 +90,14 @@
 }
 
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a.active,
+.service-dropdown-wrapper:hover,
+.about-dropdown-wrapper:hover {
   border-bottom-color: #f1aa00;
+}
+
+.service-dropdown-trigger {
+  color: #1194e6;
 }
 
 .nav-links a.cta {
@@ -187,7 +203,9 @@
   }
 
   .nav-links a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 16px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom-width: 0;
@@ -207,6 +225,36 @@
     border-bottom-color: transparent;
     padding-left: 24px;
     color: #f1aa00;
+  }
+
+  /* Service dropdown mobile */
+  .service-dropdown-wrapper {
+    width: 100%;
+    display: block;
+  }
+
+  /* About dropdown mobile: match service behavior so menus are full-width in mobile nav */
+  .about-dropdown-wrapper {
+    width: 100%;
+    display: block;
+  }
+
+  .service-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    color: #e6f0f6;
+  }
+
+  .service-dropdown-trigger:hover,
+  .service-dropdown-trigger.active {
+    background: rgba(241, 170, 0, 0.1);
+    color: #f1aa00;
+    padding-left: 24px;
   }
 
   /* Hamburger animation */

@@ -1,95 +1,10 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Services.modules.css'
 import { setMeta } from '../../utils/seo'
+import { servicesData } from '../../utils/servicesData'
 import Footer from '../../components/Footer/Footer'
-import { FaOilCan, FaTools, FaLeaf, FaWater, FaChartLine, FaShieldAlt } from 'react-icons/fa'
-import image1 from '../../assets/images/oil-drill.jpg'
-import image2 from '../../assets/images/drilling.jpg'
-import image3 from '../../assets/images/sustainable.jpg'
-import image4 from '../../assets/images/oil-tank.jpg'
-import image5 from '../../assets/images/oil-tower.jpg'
-import image6 from '../../assets/images/consulting.jpg'
-
-const servicesData = [
-  {
-    id: 1,
-    iconType: 'oil',
-    title: 'Crude Oil Extraction',
-    description: 'State-of-the-art extraction technologies minimizing environmental impact.',
-    features: [
-      'Advanced horizontal drilling',
-      'Real-time monitoring systems',
-      'Precision drilling techniques',
-      'Minimal ecological footprint'
-    ],
-    image: image1
-  },
-  {
-    id: 2,
-    iconType: 'tools',
-    title: 'Maintenance & Support',
-    description: '24/7 technical support ensuring uninterrupted operations.',
-    features: [
-      'Preventive maintenance programs',
-      'Emergency response teams',
-      'Equipment optimization',
-      'Downtime reduction strategies'
-    ],
-    image: image2
-  },
-  {
-    id: 3,
-    iconType: 'leaf',
-    title: 'Sustainable Solutions',
-    description: 'Eco-friendly drilling and refining processes for a sustainable future.',
-    features: [
-      'Carbon capture systems',
-      'Renewable energy integration',
-      'Waste management systems',
-      'Environmental compliance'
-    ],
-    image: image3
-  },
-  {
-    id: 4,
-    iconType: 'water',
-    title: 'Reservoir Management',
-    description: 'Comprehensive reservoir analysis and optimization services.',
-    features: [
-      'Seismic imaging analysis',
-      'Pressure management systems',
-      'Production forecasting',
-      'Well performance optimization'
-    ],
-    image: image4
-  },
-  {
-    id: 5,
-    iconType: 'chart',
-    title: 'Consulting & Analytics',
-    description: 'Expert consulting for optimization and resource management.',
-    features: [
-      'Strategic planning & advice',
-      'Cost efficiency analysis',
-      'Market trend analysis',
-      'ROI optimization'
-    ],
-    image: image5
-  },
-  {
-    id: 6,
-    iconType: 'shield',
-    title: 'Safety & Compliance',
-    description: 'Comprehensive safety protocols and regulatory compliance assurance.',
-    features: [
-      'Safety training programs',
-      'Compliance audits',
-      'Risk assessment & mitigation',
-      'Industry standard adherence'
-    ],
-    image: image6
-  }
-]
+import { FaOilCan, FaTools, FaLeaf, FaWater, FaChartLine, FaShieldAlt, FaArrowRight } from 'react-icons/fa'
 
 const renderIcon = (type) => {
   const iconProps = { className: 'service-icon-svg' }
@@ -149,6 +64,10 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
+                  
+                  <Link to={`/service/${service.id}`} className="learn-more-btn">
+                    Learn More <FaArrowRight />
+                  </Link>
                 </div>
               </div>
             ))}
