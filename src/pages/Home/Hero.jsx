@@ -23,6 +23,12 @@ export default function Hero(){
   className="hero"
   style={{ backgroundImage: `url(${images[index]})` }}
 >
+  {/* preload hero images to avoid visible loading flash */}
+  <div style={{display: 'none'}} aria-hidden>
+    {images.map((src, i) => (
+      <img key={i} src={src} alt="" />
+    ))}
+  </div>
   <div className="hero-container">
     <div className="hero-content">
       <div className="eyebrow">Energy | Infrastructure | Safety</div>
