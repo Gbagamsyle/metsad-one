@@ -8,6 +8,8 @@
   color: #fff;
   overflow: hidden;
   width: 100%;
+  /* fallback background color while images load to avoid showing root dark color */
+  background-color: #0A1F44;
   /* reduce left inset slightly while keeping responsive right padding */
   padding: clamp(18px, 3vw, 48px) clamp(12px, 2.5vw, 40px) clamp(18px, 3vw, 48px) clamp(8px, 1.5vw, 28px);
   box-sizing: border-box;
