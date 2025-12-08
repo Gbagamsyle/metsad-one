@@ -1,50 +1,39 @@
 // Client-side email utility
-// Calls backend API endpoints to send emails via Resend
+// Calls backend API endpoints to send emails via serverless functions
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+const API_URL = import.meta.env.VITE_API_URL || ''
 
-/**
- * Send a contact form submission via backend API
- * @param {Object} payload - { name, email, phone, message }
- */
+function buildUrl(path) {
+  return API_URL ? `${API_URL}${path}` : path
+}
+
+async function postJson(path, payload) {
+  const response = await fetch(buildUrl(path), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({}))
+    throw new Error(error.error || `HTTP ${response.status}`)
+  }
+
+  return await response.json()
+}
+
 export async function sendContactEmail(payload) {
   try {
-    const response = await fetch(`${API_URL}/api/send-contact`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
-
-    if (!response.ok) {
-      const error = await response.json().catch(() => ({}))
-      throw new Error(error.error || `HTTP ${response.status}`)
-    }
-
-    return await response.json()
+    return await postJson('/api/send-contact', payload)
   } catch (error) {
     console.error('Contact email error:', error)
     throw new Error(`Failed to send contact email: ${error.message}`)
   }
 }
 
-/**
- * Send a newsletter subscription email via backend API
- * @param {Object} payload - { email }
- */
 export async function sendNewsletterEmail(payload) {
   try {
-    const response = await fetch(`${API_URL}/api/send-newsletter`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
-
-    if (!response.ok) {
-      const error = await response.json().catch(() => ({}))
-      throw new Error(error.error || `HTTP ${response.status}`)
-    }
-
-    return await response.json()
+    return await postJson('/api/send-newsletter', payload)
   } catch (error) {
     console.error('Newsletter email error:', error)
     throw new Error(`Failed to send newsletter email: ${error.message}`)
