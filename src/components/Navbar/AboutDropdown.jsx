@@ -73,11 +73,20 @@ export default function AboutDropdown() {
         }
       }}
       onBlur={() => {
-        if (!isTouchDevice()) scheduleClose()
+        // Only schedule close on non-touch (desktop) devices
+        // On touch devices, let click handle closing
+        if (!isTouchDevice()) {
+          scheduleClose()
+        }
       }}
       onTouchStart={() => {
         // ensure any scheduled close is cancelled on touch so taps open the menu reliably
         cancelScheduledClose()
+      }}
+      onTouchEnd={() => {
+        // On touch devices, when you touch and release (click), toggle the dropdown
+        // This prevents the default browser focus behavior from interfering
+        return true
       }}
     >
       <button
