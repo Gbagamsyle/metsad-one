@@ -1,7 +1,7 @@
 import React from 'react'
 import './Services.modules.css'
 import { FaOilCan, FaTools, FaChartLine } from 'react-icons/fa'
-import image1 from '../../assets/images/oil-drill.jpg'
+import image1 from '../../assets/images/fab.png'
 import image2 from '../../assets/images/drilling.jpg'
 import image4 from '../../assets/images/consulting.jpg'
 
@@ -9,8 +9,8 @@ const services = [
   {
     id: 1,
     icon: <FaOilCan />,
-    title: 'Crude Oil Extraction',
-    desc: 'Advanced extraction technologies with minimal environmental impact.',
+    title: 'Fabrication & Installation',
+    desc: 'Custom fabrication and installation services for pipelines, structures, and equipment.',
     image: image1
   },
   {

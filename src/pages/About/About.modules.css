@@ -84,6 +84,13 @@
     margin-right: auto;
   }
 
+  /* explicitly center the underline in history section on mobile */
+  .history-text .underline {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+  }
+
   .history-image {
     max-height: 400px;
   }
