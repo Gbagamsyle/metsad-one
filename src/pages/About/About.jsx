@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Footer from '../../components/Footer/Footer'
 import './About.modules.css'
-import engineer from '../../assets/images/enginner.jpg'
+import engineer from '../../assets/images/engineer.png'
 import { setMeta } from '../../utils/seo'
 
 export default function About() {

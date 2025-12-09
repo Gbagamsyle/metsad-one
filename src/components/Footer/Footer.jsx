@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="footer-col footer-brand">
           <img src={logo} alt="Metsad logo" className="footer-logo" />
           <h3>Metsad</h3>
-          <p>Leading provider of innovative oil and gas solutions with over 20 years of industry expertise and global operations.</p>
+          <p>Leading provider of innovative oil and gas solutions with many years of industry expertise and global operations.</p>
           
           <div className="social-icons">
             <a href="#" aria-label="LinkedIn" className="social-link">

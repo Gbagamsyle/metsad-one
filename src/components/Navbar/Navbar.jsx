@@ -44,7 +44,6 @@ export default function Navbar() {
       <div className="nav-inner">
         <Link className="brand" to="/">
           <img src={logo}  alt="Metsad logo" className="brand-logo" />
-          <span className="brand-name">Metsad</span>
         </Link>
 
         <button
