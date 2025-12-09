@@ -35,7 +35,7 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 10px;
   text-decoration: none;
   color: #fff;
   transition: opacity 0.3s ease;
@@ -46,10 +46,12 @@
 }
 
 .brand-logo {
-  width: 64px;
+  width: 74px;
   height: 64px;
   object-fit: cover;
   border-radius: 4px;
+  /* nudge the logo down slightly for better vertical alignment */
+  margin-top: 5px;
 }
 
 .brand-name {
