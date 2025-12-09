@@ -4,22 +4,22 @@ import './AboutPolicies.modules.css'
 import downloadIcon from '../../assets/icons/download.svg'
 import { setMeta } from '../../utils/seo'
 
-export default function Environmental(){
+export default function QualityPolicies(){
   useEffect(()=>{
-    setMeta({ title: 'Environmental Policy — Metsad', description: 'Environmental commitments and practices.', url: window.location.href })
+    setMeta({ title: 'Quality Policy — Metsad', description: 'Quality assurance and control', url: window.location.href })
   }, [])
 
   return (
     <>
       <main className="policy-page">
         <div className="policy-container">
-          <h1>Environmental Policy</h1>
+          <h1>Quality Policy</h1>
           <div className="underline"></div>
-          <p>Our environmental policy prioritizes minimizing ecological impact through waste reduction, responsible sourcing, and investments in low-carbon solutions across our projects.</p>
+          <p>At Metsad, we are dedicated to delivering products and services that meet the highest standards of quality. Our commitment to continuous improvement, customer satisfaction, and adherence to industry best practices ensures that we consistently exceed expectations.</p>
 
-          <a className="download-btn" href="https://drive.google.com/file/d/1cDmmuD2ZN7sDadBhVefQGne9rgbjrIFy/view?usp=sharing" target="_blank" rel="noreferrer">
+          <a className="download-btn" href="https://drive.google.com/file/d/12xeJWOSRpu-PG_PP07M8xGePSgD6h8Eo/view?usp=sharing" target="_blank" rel="noreferrer">
             <img src={downloadIcon} alt="download" />
-            Download Environmental Policy
+            Download Quality Policy
           </a>
         </div>
       </main>

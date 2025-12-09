@@ -59,6 +59,7 @@ export default function Navbar() {
           <Link to="/">Home</Link>
           <AboutDropdown />
           <ServiceDropdown />
+          <Link to="/csr">CSR</Link>
           <Link to="/contact">Contact</Link>
         </nav>
       </div>

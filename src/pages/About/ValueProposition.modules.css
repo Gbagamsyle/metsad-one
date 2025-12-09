@@ -5,7 +5,7 @@
 }
 
 .vp-container{
-  max-width: 1160px;
+  max-width: 1280px;
   margin: 0 auto;
   background: #ffffff;
   padding: 44px 48px;
@@ -16,7 +16,16 @@
 
 .vp-hero{ margin-bottom: 24px }
 .vp-hero h1{ margin:0; font-size:40px; color:#07102a; letter-spacing:-0.6px; line-height:1.05 }
-.vp-hero .vp-sub{ margin-top:12px; color:#334e6f; font-size:17px; max-width:880px }
+.vp-hero .vp-sub{
+  margin-top:12px;
+  color:#334e6f;
+  font-size:17px;
+  max-width:100%;
+  display:block;
+  white-space:normal;
+  word-break:normal;
+  overflow-wrap:normal;
+}
 
 /* decorative underline used under the hero title (and mirrored under section headings) */
 .underline{
@@ -42,9 +51,15 @@
   margin-top:12px;
 }
 
-.vp-grid{ display:grid; grid-template-columns: 1fr 360px; gap:36px; align-items:start }
+.vp-grid{ display:grid; grid-template-columns: 1fr; gap:24px; align-items:start }
 .vp-list{ list-style:none; padding:0; margin:0 }
-.vp-list li{ position:relative; padding-left:42px; margin:18px 0; color:#2e4054; line-height:1.75; font-size:17px }
+.vp-list li{ position:relative; padding-left:42px; margin:18px 0; color:#2e4054; line-height:1.75; font-size:17px;
+  /* prefer natural wrapping at spaces and avoid mid-word breaks; use full column width */
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
 .vp-list li::before{ content:'\2713'; position:absolute; left:0; top:0; width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:#eaf3ff; color:#1e6fff; border-radius:6px; font-weight:700; box-shadow:0 8px 22px rgba(46,111,191,0.08); font-size:14px }
 
 .vp-side { background: linear-gradient(180deg,#ffffff 0%,#fbfdff 100%); padding:20px; border-radius:10px; border:1px solid rgba(10,31,68,0.04); box-shadow: 0 6px 18px rgba(7,16,34,0.04) }

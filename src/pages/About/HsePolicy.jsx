@@ -17,7 +17,7 @@ export default function HsePolicy(){
           <div className="underline"></div>
           <p>We maintain a proactive HSE program that places the well-being of people and protection of the environment at the center of every activity. Our approach combines rigorous risk assessment, continuous training, and a commitment to regulatory compliance.</p>
 
-          <a className="download-btn" href="https://drive.google.com/file/d/1cDmmuD2ZN7sDadBhVefQGne9rgbjrIFy/view?usp=sharing" target="_blank" rel="noreferrer">
+          <a className="download-btn" href="https://drive.google.com/file/d/1pQdAbfsI5flIwJNYrfBlNWZDBlnwzSi8/view?usp=sharing" target="_blank" rel="noreferrer">
             <img src={downloadIcon} alt="download" />
             Download HSE Policy
           </a>
