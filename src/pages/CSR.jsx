@@ -47,7 +47,7 @@ export default function CSR() {
           <div className={styles['underline']} />
           <div className={styles['csr-pillars-grid']}>
             <div className={styles['csr-pillar']}>
-              <img src={pillar1} alt="Human Capital Development" className={styles['csr-pillar-img']} />
+              <img src={pillar2} alt="Human Capital Development" className={styles['csr-pillar-img']} />
               <div className={styles['csr-pillar-content']}>
                 <h3>Human Capital Development & Educational Empowerment</h3>
                 <ul>
@@ -58,7 +58,7 @@ export default function CSR() {
               </div>
             </div>
             <div className={styles['csr-pillar']}>
-              <img src={pillar2} alt="Sustainable Infrastructure" className={styles['csr-pillar-img']} />
+              <img src={pillar1} alt="Sustainable Infrastructure" className={styles['csr-pillar-img']} />
               <div className={styles['csr-pillar-content']}>
                 <h3>Sustainable Infrastructure & Social Amenities</h3>
                 <ul>
@@ -70,7 +70,7 @@ export default function CSR() {
               </div>
             </div>
             <div className={styles['csr-pillar']}>
-              <img src={pillar3} alt="Youth Empowerment" className={styles['csr-pillar-img']} />
+              <img src={pillar4} alt="Youth Empowerment" className={styles['csr-pillar-img']} />
               <div className={styles['csr-pillar-content']}>
                 <h3>Youth Empowerment & Economic Inclusion</h3>
                 <ul>
@@ -81,7 +81,7 @@ export default function CSR() {
               </div>
             </div>
             <div className={styles['csr-pillar']}>
-              <img src={pillar4} alt="Stakeholder Engagement" className={styles['csr-pillar-img']} />
+              <img src={pillar3} alt="Stakeholder Engagement" className={styles['csr-pillar-img']} />
               <div className={styles['csr-pillar-content']}>
                 <h3>Proactive Stakeholder Engagement & Conflict Resolution</h3>
                 <ul>
