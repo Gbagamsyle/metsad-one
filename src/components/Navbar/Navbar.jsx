@@ -39,29 +39,60 @@ export default function Navbar() {
     return () => clearTimeout(timer)
   }, [location.pathname])
 
+  // Lock/unlock body scroll when menu opens/closes
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
   return (
-    <header className={`metsad-nav ${showNav ? 'show' : ''}`}>
-      <div className="nav-inner">
-        <Link className="brand" to="/">
-          <img src={logo}  alt="Metsad logo" className="brand-logo" />
-        </Link>
+    <>
+      {/* Overlay backdrop when menu is open */}
+      {open && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.5)',
+            backdropFilter: 'blur(3px)',
+            WebkitBackdropFilter: 'blur(3px)',
+            zIndex: 49,
+          }}
+          onClick={() => setOpen(false)}
+        />
+      )}
+      <header className={`metsad-nav ${showNav ? 'show' : ''}`}>
+        <div className="nav-inner">
+          <Link className="brand" to="/">
+            <img src={logo}  alt="Metsad logo" className="brand-logo" />
+          </Link>
 
-        <button
-          className={`nav-toggle ${open ? 'open' : ''}`}
-          aria-label="Toggle navigation"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="hamburger" />
-        </button>
+          <button
+            className={`nav-toggle ${open ? 'open' : ''}`}
+            aria-label="Toggle navigation"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className="hamburger" />
+          </button>
 
-        <nav className={open ? 'nav-links open' : 'nav-links'}>
-          <Link to="/">Home</Link>
-          <AboutDropdown />
-          <ServiceDropdown />
-          <Link to="/csr">CSR</Link>
-          <Link to="/contact">Contact</Link>
-        </nav>
-      </div>
-    </header>
+          <nav className={open ? 'nav-links open' : 'nav-links'}>
+            <Link to="/">Home</Link>
+            <AboutDropdown />
+            <ServiceDropdown />
+            <Link to="/csr">CSR</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+        </div>
+      </header>
+    </>
   )
 }
