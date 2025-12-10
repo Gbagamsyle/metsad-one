@@ -7,7 +7,6 @@ const aboutItems = [
   { id: 'value-proposition', title: 'Our Value Proposition', to: '/about/value-proposition' },
   { id: 'hse', title: 'Health, Safety And Environmental Policy (HSE)', to: '/about/hse' },
   { id: 'quality-policies', title: 'Quality Policy', to: '/about/quality-policies' },
-  { id: 'privacy', title: 'Privacy Policy', to: '/about/privacy' },
 ]
 
 export default function AboutDropdown() {

@@ -9,7 +9,6 @@ import About from './pages/About/About'
 import ValueProposition from './pages/About/ValueProposition'
 import HsePolicy from './pages/About/HsePolicy'
 import QualityPolicies from './pages/About/Environmental'
-import PrivacyPolicy from './pages/About/PrivacyPolicy'
 import Services from './pages/Services/Services'
 import ServiceDetail from './pages/ServiceDetail/ServiceDetail'
 import Contact from './pages/Contact/Contact'
@@ -28,7 +27,6 @@ function App() {
         <Route path="/about/value-proposition" element={<ValueProposition />} />
         <Route path="/about/hse" element={<HsePolicy />} />
         <Route path="/about/quality-policies" element={<QualityPolicies />} />
-        <Route path="/about/privacy" element={<PrivacyPolicy />} />
         <Route path="/services" element={<Services />} />
         <Route path="/service/:id" element={<ServiceDetail />} />
         <Route path="/csr" element={<CSR />} />
