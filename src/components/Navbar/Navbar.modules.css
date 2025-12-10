@@ -237,7 +237,7 @@
 
   /* Override desktop padding on first and last mobile nav links */
   .nav-links > a:first-child {
-    padding-left: 24px;
+    padding-left: 18px;
   }
 
   .nav-links > a:last-child {
@@ -278,9 +278,9 @@
     padding: 18px 24px;
     border-left: 4px solid transparent;
     text-align: left;
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 500;
-    font-size: 16px;
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
     transition: all 0.25s ease;
     background: none;
     border: none;
@@ -293,9 +293,9 @@
   .about-dropdown-trigger.active {
     background: rgba(241, 170, 0, 0.12);
     border-left-color: #f1aa00;
-    color: #f1aa00;
+    color: #f1aa00 !important;
     padding-left: 28px;
-    font-weight: 700;
+    font-weight: 700 !important;
   }
 
   /* Hamburger animation */
