@@ -17,9 +17,13 @@ export default function ServiceDropdown() {
   useEffect(() => {
     if (prevPathnameRef.current !== location.pathname) {
       prevPathnameRef.current = location.pathname
-      // Defer state update to avoid synchronous setState in effect
+      // If navigated to the services page, open the dropdown; otherwise close it
       queueMicrotask(() => {
-        setIsOpen(false)
+        if (location.pathname === '/services') {
+          setIsOpen(true)
+        } else {
+          setIsOpen(false)
+        }
       })
     }
   }, [location.pathname])

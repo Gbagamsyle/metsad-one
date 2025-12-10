@@ -20,7 +20,14 @@ export default function AboutDropdown() {
   useEffect(() => {
     if (prevPathnameRef.current !== location.pathname) {
       prevPathnameRef.current = location.pathname
-      queueMicrotask(() => setIsOpen(false))
+      queueMicrotask(() => {
+        // If navigated to an about page, open the dropdown; otherwise close it
+        if (location.pathname.startsWith('/about')) {
+          setIsOpen(true)
+        } else {
+          setIsOpen(false)
+        }
+      })
     }
   }, [location.pathname])
 
