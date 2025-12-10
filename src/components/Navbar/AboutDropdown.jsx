@@ -39,15 +39,12 @@ export default function AboutDropdown() {
   }
 
   const handleTrigger = () => {
-    // If already on any /about route, toggle dropdown; otherwise navigate to /about
-    if (location.pathname && location.pathname.startsWith('/about')) {
-      // If we're already on an about page, open the dropdown on first click
-      // (don't require two clicks). If it's already open, toggle to close.
-      cancelScheduledClose()
-      setIsOpen((v) => (v ? false : true))
-    } else {
+    // Toggle dropdown on click, regardless of current page
+    cancelScheduledClose()
+    setIsOpen((v) => !v)
+    // If not on about page, navigate there
+    if (!location.pathname.startsWith('/about')) {
       navigate('/about')
-      setIsOpen(false)
     }
   }
 

@@ -41,16 +41,12 @@ export default function ServiceDropdown() {
   }
 
   const handleTrigger = () => {
-    // If already on the services page, toggle dropdown. Otherwise navigate to services
-    // and keep the dropdown closed (user can click Services again to open it).
-    if (location.pathname === '/services') {
-      // clicking while on /services should toggle; cancel any scheduled close
-      cancelScheduledClose()
-      setIsOpen((v) => !v)
-    } else {
+    // Toggle dropdown on click, regardless of current page
+    cancelScheduledClose()
+    setIsOpen((v) => !v)
+    // If not on services page, navigate there
+    if (location.pathname !== '/services') {
       navigate('/services')
-      // ensure dropdown remains closed when navigating to the services page
-      setIsOpen(false)
     }
   }
 
