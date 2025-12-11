@@ -63,8 +63,8 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>&copy; 2025 Metsad Oil & Gas. All rights reserved.</p>
         <div className="footer-links">
-          <span className="footer-text">Privacy</span>
-          <span className="footer-text">Terms</span>
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/terms">Terms</Link>
           <Link to="/cookies">Cookies</Link>
         </div>
       </div>
