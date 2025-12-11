@@ -17,9 +17,13 @@ export default function ServiceDropdown() {
   useEffect(() => {
     if (prevPathnameRef.current !== location.pathname) {
       prevPathnameRef.current = location.pathname
-      // Defer state update to avoid synchronous setState in effect
+      // If navigated to the services page, open the dropdown; otherwise close it
       queueMicrotask(() => {
-        setIsOpen(false)
+        if (location.pathname === '/services') {
+          setIsOpen(true)
+        } else {
+          setIsOpen(false)
+        }
       })
     }
   }, [location.pathname])
@@ -41,16 +45,12 @@ export default function ServiceDropdown() {
   }
 
   const handleTrigger = () => {
-    // If already on the services page, toggle dropdown. Otherwise navigate to services
-    // and keep the dropdown closed (user can click Services again to open it).
-    if (location.pathname === '/services') {
-      // clicking while on /services should toggle; cancel any scheduled close
-      cancelScheduledClose()
-      setIsOpen((v) => !v)
-    } else {
+    // Toggle dropdown on click, regardless of current page
+    cancelScheduledClose()
+    setIsOpen((v) => !v)
+    // If not on services page, navigate there
+    if (location.pathname !== '/services') {
       navigate('/services')
-      // ensure dropdown remains closed when navigating to the services page
-      setIsOpen(false)
     }
   }
 

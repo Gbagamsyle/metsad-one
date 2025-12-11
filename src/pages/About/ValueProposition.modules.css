@@ -83,7 +83,7 @@
   .vp-grid{ grid-template-columns: 1fr; }
   .vp-container{ padding:28px }
   .vp-hero h1{ font-size:32px }
-  .vp-list li{ padding-left:30px }
+  .vp-list li{ padding-left:50px }
 }
 
 /* full-width philosophy section below the list */

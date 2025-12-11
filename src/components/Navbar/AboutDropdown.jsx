@@ -7,7 +7,6 @@ const aboutItems = [
   { id: 'value-proposition', title: 'Our Value Proposition', to: '/about/value-proposition' },
   { id: 'hse', title: 'Health, Safety And Environmental Policy (HSE)', to: '/about/hse' },
   { id: 'quality-policies', title: 'Quality Policy', to: '/about/quality-policies' },
-  { id: 'privacy', title: 'Privacy Policy', to: '/about/privacy' },
 ]
 
 export default function AboutDropdown() {
@@ -20,7 +19,14 @@ export default function AboutDropdown() {
   useEffect(() => {
     if (prevPathnameRef.current !== location.pathname) {
       prevPathnameRef.current = location.pathname
-      queueMicrotask(() => setIsOpen(false))
+      queueMicrotask(() => {
+        // If navigated to an about page, open the dropdown; otherwise close it
+        if (location.pathname.startsWith('/about')) {
+          setIsOpen(true)
+        } else {
+          setIsOpen(false)
+        }
+      })
     }
   }, [location.pathname])
 
@@ -39,15 +45,12 @@ export default function AboutDropdown() {
   }
 
   const handleTrigger = () => {
-    // If already on any /about route, toggle dropdown; otherwise navigate to /about
-    if (location.pathname && location.pathname.startsWith('/about')) {
-      // If we're already on an about page, open the dropdown on first click
-      // (don't require two clicks). If it's already open, toggle to close.
-      cancelScheduledClose()
-      setIsOpen((v) => (v ? false : true))
-    } else {
+    // Toggle dropdown on click, regardless of current page
+    cancelScheduledClose()
+    setIsOpen((v) => !v)
+    // If not on about page, navigate there
+    if (!location.pathname.startsWith('/about')) {
       navigate('/about')
-      setIsOpen(false)
     }
   }
 
