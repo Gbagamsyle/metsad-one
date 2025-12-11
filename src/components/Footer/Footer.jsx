@@ -28,6 +28,7 @@ export default function Footer() {
         </div>
 
         {/* Quick Links */}
+        <div className="footer-right">
         <div className="footer-col">
           <h4>Quick Links</h4>
           <nav className="footer-nav">
@@ -54,6 +55,7 @@ export default function Footer() {
             <span className="footer-text">Privacy Policy</span>
             <span className="footer-text">Terms of Service</span>
           </nav>
+        </div>
         </div>
       </div>
 

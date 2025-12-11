@@ -1,111 +1,200 @@
 .footer{
-  background: linear-gradient(90deg, #225bbd 0%,#0A1F44 100%);
+  background: rgba(2, 37, 97, 0.95);
   color: #fff;
-  padding: 40px 20px 20px;
-  padding-top: 48px;
+  padding: 12px 0; /* reduced vertical padding to lower height */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 -6px 20px rgba(7,16,34,0.18);
 }
 
 .footer-container{
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px; /* tighter spacing */
+  padding: 0 16px 2px;
 }
 
 .footer-col h4{
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
-  margin: 35px 0 20px;
-  padding-top: 25px;
-  border-bottom: 2px solid #1e40af;
+  margin: 0 0 12px 0;
+  padding: 0;
+  border-bottom: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
 }
 
 .footer-brand h3{
-  font-size: 24px;
-  margin: 12px 0 16px;
+  font-size: 18px;
+  margin: 6px 0 4px;
   font-weight: 700;
+  text-align: left;
 }
 
 .footer-logo{
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   object-fit: cover;
   border-radius: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .footer-brand p{
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-  margin: 0 0 20px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  margin: 0 0 6px;
+  text-align: left;
+  max-width: 280px;
 }
+  
+  /* Make the brand column fixed/left and let the other columns fill the space */
+  .footer-brand{
+    text-align: left;
+    flex: 0 0 auto;
+    max-width: 260px;
+  }
 
 .social-icons{
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 8px;
 }
 
 .social-link{
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
   color: #fff;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-  font-size: 18px;
+  transition: transform 0.16s ease, background 0.16s ease;
+  font-size: 14px;
 }
 
 .social-link:hover{
-  background: #1e40af;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.12);
 }
 
 .footer-nav{
   display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 10px;
 }
-
 .footer-nav a{
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255,255,255,0.8);
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.3s ease;
+  padding: 4px 0;
+  border-radius: 0;
+  transition: color 0.14s ease;
 }
 
 .footer-nav a:hover{
-  color: #fff;
+  background: transparent;
+  color: #D4A024;
 }
 
 .contact-info{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  text-align: left;
+}
+
+/* Desktop layout: horizontal, 3-column professional footer */
+@media (min-width: 768px) {
+  .footer-container{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 4px;
+  }
+
+  .footer-col{
+      flex: 1 1 0;
+      max-width: 33%;
+      text-align: left;
+      align-self: stretch;
+    }
+
+  /* Make the brand column fixed/left and let the other columns fill the space */
+  .footer-brand{
+    text-align: left;
+    flex: 0 0 auto;
+    max-width: 200px;
+  }
+
+  .footer-col:not(.footer-brand) {
+    flex: 1 1 0;
+    max-width: none;
+  }
+
+  /* wrapper for right-side columns */
+  .footer-right {
+    display: flex;
+    gap: 12px; /* tightened gap so Quick Links and Contact sit closer */
+    flex: 1 1 auto;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 40px; /* nudge right-side columns down slightly for visual balance */
+    margin-left: 20px;
+  }
+  .footer-brand p{
+    text-align: left;
+  }
+
+  .footer-brand h3{
+    text-align: left;
+  }
+
+  .footer-nav{
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contact-info{
+    text-align: left;
+  }
+
+    .footer-bottom{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+  }
 }
 
 .contact-info p{
-  margin: 0;
+  margin: 6px 0;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255,255,255,0.8);
   line-height: 1.6;
 }
 
 .contact-info a{
-  color: rgba(255, 255, 255, 0.85);
+  color: #D4A024;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 .contact-info a:hover{
-  color: #fff;
+  text-decoration: underline;
 }
 
 .icon{
@@ -115,34 +204,53 @@
 }
 
 .footer-bottom{
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Keep bottom bar content constrained on large screens */
+.footer-bottom-inner{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-links{
   display: flex;
-  gap: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-links a{
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.18s ease;
+  padding: 4px 6px;
+  border-radius: 6px;
 }
 
 /* Non-clickable footer text (used when a page or policy is intentionally removed) */
 .footer-text{
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   display: inline-block;
   cursor: default;
+  padding: 4px 6px;
+  border-radius: 6px;
 }
 
 .footer-links a:hover{
@@ -151,8 +259,15 @@
 
 @media (max-width: 768px){
   .footer-container{
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 30px;
+  }
+
+  /* Reset footer-right to stack vertically on mobile */
+  .footer-right {
+    margin-top: 0;
+    margin-left: 0;
+    flex-direction: column;
   }
 
   .footer-bottom{
