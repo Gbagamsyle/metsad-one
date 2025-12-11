@@ -136,6 +136,15 @@
   transition: color 0.3s ease;
 }
 
+/* Non-clickable footer text (used when a page or policy is intentionally removed) */
+.footer-text{
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  cursor: default;
+}
+
 .footer-links a:hover{
   color: rgba(255, 255, 255, 0.9);
 }

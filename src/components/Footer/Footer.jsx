@@ -43,8 +43,6 @@ export default function Footer() {
           <h4>Contact</h4>
           <div className="contact-info">
             <p><span className="icon">📧</span> <a href="mailto:info@metsadgroup.com">info@metsadgroup.com</a></p>
-            <p><span className="icon">📞</span> <a href="tel:+18001234567">+1 (800) 123-4567</a></p>
-            <p><span className="icon">📍</span> Houston, TX 77002</p>
             <p><span className="icon">🕐</span> 24/7 Support Available</p>
           </div>
         </div>
@@ -53,10 +51,8 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Company</h4>
           <nav className="footer-nav">
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/terms">Terms of Service</Link>
-            <Link to="/careers">Careers</Link>
-            <Link to="/press">Press</Link>
+            <span className="footer-text">Privacy Policy</span>
+            <span className="footer-text">Terms of Service</span>
           </nav>
         </div>
       </div>
@@ -65,8 +61,8 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>&copy; 2025 Metsad Oil & Gas. All rights reserved.</p>
         <div className="footer-links">
-          <Link to="/privacy">Privacy</Link>
-          <Link to="/terms">Terms</Link>
+          <span className="footer-text">Privacy</span>
+          <span className="footer-text">Terms</span>
           <Link to="/cookies">Cookies</Link>
         </div>
       </div>

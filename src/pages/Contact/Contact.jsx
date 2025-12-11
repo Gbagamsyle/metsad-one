@@ -93,17 +93,17 @@ export default function Contact() {
 
 							<div className="panel-card">
 								<h4>Sales</h4>
-								<p className="muted">sales@metsadgroup.com<br/>(469) 324-9792</p>
+								<p className="muted">sales@metsadgroup.com<br/></p>
 							</div>
 
 							<div className="panel-card">
 								<h4>Tech Support</h4>
-								<p className="muted">support@metsadgroup.com<br/>(972) 992-1668</p>
+								<p className="muted">support@metsadgroup.com</p>
 							</div>
 
 							<div className="panel-card">
 								<h4>Billing</h4>
-								<p className="muted">billing@metsadgroup.com<br/>(972) 992-1668</p>
+								<p className="muted">billing@metsadgroup.com</p>
 							</div>
 
 							<div className="panel-socials">

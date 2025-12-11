@@ -98,7 +98,6 @@ export default function CookiesPolicy() {
             </p>
             <div className="cookies-contact-info">
               <p>Email: <a href="mailto:info@metsad.com">info@metsad.com</a></p>
-              <p>Phone: <a href="tel:+234123456789\">+234 (0) 1 2345 6789</a></p>
             </div>
 
             <h2>Updates to This Policy</h2>

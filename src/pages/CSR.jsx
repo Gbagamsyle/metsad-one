@@ -117,7 +117,7 @@ export default function CSR() {
           <p>
             <strong>Head, Community Relations & Sustainable Development</strong><br />
             Metsad Engineering Services Limited<br />
-            [Email] | [Phone Number] | [Office Address]
+            contact@metsadgroup.com
           </p>
         </section>
         </main>
