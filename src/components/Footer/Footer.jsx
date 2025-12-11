@@ -28,6 +28,7 @@ export default function Footer() {
         </div>
 
         {/* Quick Links */}
+        <div className="footer-right">
         <div className="footer-col">
           <h4>Quick Links</h4>
           <nav className="footer-nav">
@@ -55,14 +56,15 @@ export default function Footer() {
             <span className="footer-text">Terms of Service</span>
           </nav>
         </div>
+        </div>
       </div>
 
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <p>&copy; 2025 Metsad Oil & Gas. All rights reserved.</p>
         <div className="footer-links">
-          <span className="footer-text">Privacy</span>
-          <span className="footer-text">Terms</span>
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/terms">Terms</Link>
           <Link to="/cookies">Cookies</Link>
         </div>
       </div>

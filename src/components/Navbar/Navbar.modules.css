@@ -1,18 +1,17 @@
 .metsad-nav {
   width: 100%;
-  max-width: 1360px;
-  left: 50%;
-  transform: translateX(-50%);
   height: 84px;
   background: transparent;
   color: #fff;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 60;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
   box-shadow: none;
+  /* Keep the nav full-bleed; inner container centers content */
 }
 
 .metsad-nav.show {
@@ -52,8 +51,8 @@
   height: 64px;
   object-fit: cover;
   border-radius: 4px;
-  /* nudge the logo down slightly for better vertical alignment */
-  margin-top: 5px;
+  margin-top: 0;
+  vertical-align: middle;
 }
 
 .brand-name {
