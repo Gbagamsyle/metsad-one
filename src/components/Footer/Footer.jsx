@@ -15,14 +15,11 @@ export default function Footer() {
           <p>Leading provider of innovative oil and gas solutions with many years of industry expertise and global operations.</p>
           
           <div className="social-icons">
-            <a href="#" aria-label="LinkedIn" className="social-link">
+            <a href="https://www.linkedin.com/in/metsad-engineering-service-86aa603a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn" className="social-link">
               <FaLinkedin />
             </a>
-            <a href="#" aria-label="Twitter" className="social-link">
+            <a href="http://x.com/Metsadgroup" aria-label="Twitter" className="social-link">
               <FaTwitter />
-            </a>
-            <a href="#" aria-label="Facebook" className="social-link">
-              <FaFacebook />
             </a>
           </div>
         </div>

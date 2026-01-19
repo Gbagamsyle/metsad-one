@@ -9,15 +9,15 @@ const services = [
   {
     id: 1,
     icon: <FaOilCan />,
-    title: 'Fabrication & Installation',
-    desc: 'Custom fabrication and installation services for pipelines, structures, and equipment.',
+    title: 'Asset Integrity Management',
+    desc: 'Comprehensive asset monitoring, inspection, and integrity assessment to ensure optimal performance and longevity.',
     image: image1
   },
   {
     id: 2,
     icon: <FaTools />,
-    title: 'Maintenance & Support',
-    desc: '24/7 technical support and preventive maintenance services.',
+    title: 'Fabrication & Installation',
+    desc: 'Custom fabrication and installation services for pipelines, structures, and equipment.',
     image: image2
   },
 
