@@ -10,23 +10,23 @@ export const servicesData = [
     id: 1,
     slug: 'asset-integrity-inspection',
     iconType: 'oil',
-    title: 'Asset Integrity & Inspection',
+    title: 'Asset Integrity Management ',
     subtitle: 'Non-Destructive Examinations (NDE)',
     description: 'Non-Destructive Examinations (NDE)',
     fullDescription: 'Our Asset Integrity and Inspection services ensure the structural and operational integrity of critical infrastructure. We employ advanced Non-Destructive Examination (NDE) techniques to assess, monitor, and maintain the health of your assets without compromising operational continuity.',
     features: [
-      'Coating & Painting',
-      'Composite Wrap Rehabilitation',
+      'Coating & Insulation Repair',
+      'Composite Wrap',
       'Corrosion Monitoring',
-      'Structural Health Monitoring'
+      'Structural Health Management'
     ],
     detailedFeatures: [
       {
-        name: 'Coating & Painting',
+        name: 'Coating and Insulation Repair',
         description: 'Professional coating and painting services to protect assets from environmental degradation and extend asset lifespan.'
       },
       {
-        name: 'Composite Wrap Rehabilitation',
+        name: 'Composite Wrap',
         description: 'Advanced composite wrapping techniques for damaged pipeline and structural rehabilitation.'
       },
       {
@@ -34,7 +34,7 @@ export const servicesData = [
         description: 'Continuous monitoring systems to detect and prevent corrosion-related failures.'
       },
       {
-        name: 'Structural Health Monitoring',
+        name: 'Structural Health Management',
         description: 'Real-time monitoring of structural integrity using state-of-the-art sensors and analytics.'
       }
     ],
