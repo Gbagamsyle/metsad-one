@@ -67,12 +67,20 @@ export default function ServiceDetail() {
       {/* Detailed Features Section */}
       <section className="service-features-detailed">
         <div className="container">
-          <h2>Our Offerings</h2>
+          <div className="features-header">
+            <h2>Our Offerings</h2>
+          </div>
           <div className="features-grid">
             {service.detailedFeatures.map((feature, idx) => (
               <div key={idx} className="feature-card-detailed">
                 <h3>{feature.name}</h3>
                 <p>{feature.description}</p>
+                {idx === 0 && (
+                  <Link to="/services/coating-insulation" className="gallery-link-card">Coating & Insulation — Photos & Details</Link>
+                )}
+                {feature.name && feature.name.toLowerCase().includes('corrosion') && (
+                  <Link to="/services/corrosion-monitoring" className="gallery-link-card">Corrosion Monitoring — Photos & Details</Link>
+                )}
               </div>
             ))}
           </div>

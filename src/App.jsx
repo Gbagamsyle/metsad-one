@@ -12,6 +12,9 @@ import HsePolicy from './pages/About/HsePolicy'
 import QualityPolicies from './pages/About/Environmental'
 import Services from './pages/Services/Services'
 import ServiceDetail from './pages/ServiceDetail/ServiceDetail'
+import ServiceGallery from './pages/ServiceDetail/ServiceGallery'
+import CoatingAndInsulation from './pages/Services/CoatingAndInsulation'
+import CorrosionMonitoring from './pages/Services/CorrosionMonitoring'
 import Contact from './pages/Contact/Contact'
 import CSR from './pages/CSR'
 import CookiesPolicy from './pages/CookiesPolicy'
@@ -31,6 +34,9 @@ function App() {
         <Route path="/about/quality-policies" element={<QualityPolicies />} />
         <Route path="/services" element={<Services />} />
         <Route path="/service/:id" element={<ServiceDetail />} />
+        <Route path="/service/:id/gallery" element={<ServiceGallery />} />
+        <Route path="/services/coating-insulation" element={<CoatingAndInsulation />} />
+        <Route path="/services/corrosion-monitoring" element={<CorrosionMonitoring />} />
         <Route path="/csr" element={<CSR />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cookies" element={<CookiesPolicy />} />
