@@ -1,27 +1,29 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import './index.css'
-import './styles/global.css'
-import useScrollReveal from './hooks/useScrollReveal'
-import Navbar from './components/Navbar/Navbar'
-import CookieConsent from './components/CookieConsent/CookieConsent'
-import Home from './pages/Home/Home'
-import About from './pages/About/About'
-import ValueProposition from './pages/About/ValueProposition'
-import HsePolicy from './pages/About/HsePolicy'
-import QualityPolicies from './pages/About/Environmental'
-import Services from './pages/Services/Services'
-import ServiceDetail from './pages/ServiceDetail/ServiceDetail'
-import ServiceGallery from './pages/ServiceDetail/ServiceGallery'
-import CoatingAndInsulation from './pages/Services/CoatingAndInsulation'
-import CorrosionMonitoring from './pages/Services/CorrosionMonitoring'
-import Contact from './pages/Contact/Contact'
-import CSR from './pages/CSR'
-import CookiesPolicy from './pages/CookiesPolicy'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./index.css";
+import "./styles/global.css";
+import useScrollReveal from "./hooks/useScrollReveal";
+import Navbar from "./components/Navbar/Navbar";
+import CookieConsent from "./components/CookieConsent/CookieConsent";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import ValueProposition from "./pages/About/ValueProposition";
+import HsePolicy from "./pages/About/HsePolicy";
+import QualityPolicies from "./pages/About/Environmental";
+import Services from "./pages/Services/Services";
+import ServiceDetail from "./pages/ServiceDetail/ServiceDetail";
+import ServiceGallery from "./pages/ServiceDetail/ServiceGallery";
+import CoatingAndInsulation from "./pages/Services/CoatingAndInsulation";
+import CorrosionMonitoring from "./pages/Services/CorrosionMonitoring";
+import CompositeWrap from "./pages/Services/CompositeWrap";
+import StructuralHealthManagement from "./pages/Services/StructuralHealthManagement";
+import Contact from "./pages/Contact/Contact";
+import CSR from "./pages/CSR";
+import CookiesPolicy from "./pages/CookiesPolicy";
 
 function App() {
   // initialize scroll reveal (runs once across the app)
-  useScrollReveal()
+  useScrollReveal();
 
   return (
     <div className="app-root">
@@ -35,15 +37,26 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/service/:id" element={<ServiceDetail />} />
         <Route path="/service/:id/gallery" element={<ServiceGallery />} />
-        <Route path="/services/coating-insulation" element={<CoatingAndInsulation />} />
-        <Route path="/services/corrosion-monitoring" element={<CorrosionMonitoring />} />
+        <Route
+          path="/services/coating-insulation"
+          element={<CoatingAndInsulation />}
+        />
+        <Route path="/services/composite-wrap" element={<CompositeWrap />} />
+        <Route
+          path="/services/corrosion-monitoring"
+          element={<CorrosionMonitoring />}
+        />
+        <Route
+          path="/services/structural-health-management"
+          element={<StructuralHealthManagement />}
+        />
         <Route path="/csr" element={<CSR />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cookies" element={<CookiesPolicy />} />
       </Routes>
       <CookieConsent />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
