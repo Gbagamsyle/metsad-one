@@ -1,25 +1,25 @@
-import React, { useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { FaArrowRight, FaCheck } from 'react-icons/fa'
-import { getServiceById } from '../../utils/servicesData'
-import { setMeta } from '../../utils/seo'
-import Footer from '../../components/Footer/Footer'
-import './ServiceDetail.css'
+import React, { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { FaArrowRight, FaCheck } from "react-icons/fa";
+import { getServiceById } from "../../utils/servicesData";
+import { setMeta } from "../../utils/seo";
+import Footer from "../../components/Footer/Footer";
+import "./ServiceDetail.css";
 
 export default function ServiceDetail() {
-  const { id } = useParams()
-  const service = getServiceById(id)
+  const { id } = useParams();
+  const service = getServiceById(id);
 
   useEffect(() => {
     if (service) {
       setMeta({
         title: `${service.title} — Metsad Services`,
         description: service.fullDescription,
-        url: window.location.href
-      })
-      window.scrollTo(0, 0)
+        url: window.location.href,
+      });
+      window.scrollTo(0, 0);
     }
-  }, [id, service])
+  }, [id, service]);
 
   if (!service) {
     return (
@@ -35,7 +35,7 @@ export default function ServiceDetail() {
         </section>
         <Footer />
       </main>
-    )
+    );
   }
 
   return (
@@ -71,18 +71,45 @@ export default function ServiceDetail() {
             <h2>Our Offerings</h2>
           </div>
           <div className="features-grid">
-            {service.detailedFeatures.map((feature, idx) => (
-              <div key={idx} className="feature-card-detailed">
-                <h3>{feature.name}</h3>
-                <p>{feature.description}</p>
-                {idx === 0 && (
-                  <Link to="/services/coating-insulation" className="gallery-link-card">Coating & Insulation — Photos & Details</Link>
-                )}
-                {feature.name && feature.name.toLowerCase().includes('corrosion') && (
-                  <Link to="/services/corrosion-monitoring" className="gallery-link-card">Corrosion Monitoring — Photos & Details</Link>
-                )}
-              </div>
-            ))}
+            {service.detailedFeatures.map((feature, idx) => {
+              const name = feature.name || "";
+              const lower = name.toLowerCase();
+              let to = null;
+              if (lower.includes("corrosion"))
+                to = "/services/corrosion-monitoring";
+              else if (lower.includes("composite"))
+                to = "/services/composite-wrap";
+              else if (lower.includes("structural health"))
+                to = "/services/structural-health-management";
+              else if (
+                lower.includes("coating") ||
+                lower.includes("insulation") ||
+                lower.includes("lagging")
+              )
+                to = "/services/coating-insulation";
+
+              const content = (
+                <>
+                  <h3>{feature.name}</h3>
+                  <p>{feature.description}</p>
+                </>
+              );
+
+              return to ? (
+                <Link
+                  key={idx}
+                  to={to}
+                  className="feature-card-detailed"
+                  title="Click to see more"
+                >
+                  {content}
+                </Link>
+              ) : (
+                <div key={idx} className="feature-card-detailed">
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -102,8 +129,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-
       <Footer />
     </main>
-  )
+  );
 }

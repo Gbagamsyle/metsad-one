@@ -1,34 +1,35 @@
-import React from 'react'
-import './Services.modules.css'
-import { FaOilCan, FaTools, FaChartLine } from 'react-icons/fa'
-import image1 from '../../assets/images/fab.png'
-import image2 from '../../assets/images/drilling.jpg'
-import image4 from '../../assets/images/consulting.jpg'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Services.modules.css";
+import { FaOilCan, FaTools, FaChartLine } from "react-icons/fa";
+import image1 from "../../assets/images/fab.png";
+import image2 from "../../assets/images/drilling.jpg";
+import image4 from "../../assets/images/consulting.jpg";
 
 const services = [
   {
     id: 1,
     icon: <FaOilCan />,
-    title: 'Asset Integrity Management',
-    desc: 'Comprehensive asset monitoring, inspection, and integrity assessment to ensure optimal performance and longevity.',
-    image: image1
+    title: "Asset Integrity Management",
+    desc: "Comprehensive asset monitoring, inspection, and integrity assessment to ensure optimal performance and longevity.",
+    image: image1,
   },
   {
-    id: 2,
+    id: 3,
     icon: <FaTools />,
-    title: 'Fabrication & Installation',
-    desc: 'Custom fabrication and installation services for pipelines, structures, and equipment.',
-    image: image2
+    title: "Fabrication & Installation",
+    desc: "Custom fabrication and installation services for pipelines, structures, and equipment.",
+    image: image2,
   },
 
   {
-    id: 3,
+    id: 6,
     icon: <FaChartLine />,
-    title: 'Consulting',
-    desc: 'Expert consulting for optimization and resource management.',
-    image: image4
-  }
-]
+    title: "Consulting",
+    desc: "Expert consulting for optimization and resource management.",
+    image: image4,
+  },
+];
 
 export default function Services() {
   return (
@@ -36,22 +37,41 @@ export default function Services() {
       <div className="services-container">
         <div className="services-header">
           <h2>Our Services</h2>
-          <p>Comprehensive energy solutions backed by decades of industry expertise</p>
+          <p>
+            Comprehensive energy solutions backed by decades of industry
+            expertise
+          </p>
         </div>
 
         <div className="services-grid">
-          {services.map((s) => (
-            <div key={s.id} className="service-card">
-              <div className="service-image">
-                <img src={s.image} alt={s.title} />
+          {services.map((s) =>
+            s.title === "Consulting" ? (
+              <div key={s.id} className="service-card">
+                <div className="service-image">
+                  <img src={s.image} alt={s.title} />
+                </div>
+                <div className="service-icon">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
               </div>
-              <div className="service-icon">{s.icon}</div>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </div>
-          ))}
+            ) : (
+              <Link
+                key={s.id}
+                to={`/service/${s.id}`}
+                className="service-card"
+                title="Click to see more"
+              >
+                <div className="service-image">
+                  <img src={s.image} alt={s.title} />
+                </div>
+                <div className="service-icon">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </Link>
+            ),
+          )}
         </div>
       </div>
     </section>
-  )
+  );
 }
