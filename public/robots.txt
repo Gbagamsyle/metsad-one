@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://metsadgroup.com/sitemap.xml

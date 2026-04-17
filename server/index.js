@@ -409,6 +409,15 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' })
 })
 
+// Serve static files from dist folder (built React app)
+app.use(express.static(path.join(__dirname, '../dist')))
+
+// Catch-all route: serve index.html for all non-API routes (SPA)
+// This enables client-side routing and ensures Google can crawl all pages
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'))
+})
+
 // Start server
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
